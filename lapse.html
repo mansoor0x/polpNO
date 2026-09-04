@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ps4 lapse &middot; mansoor0x</title>
+<style>
+  :root {
+    --bg-deep: #050507;
+    --bg-card: #0c0d12;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(99, 102, 241, 0.3);
+    --accent: #818cf8;
+    --accent-glow: rgba(129, 140, 248, 0.2);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --text-dim: #4b5563;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    font: 14px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  /* Ambient background glow */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-glow);
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  #container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    margin: 20px;
+    padding: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+    backdrop-filter: blur(20px);
+    box-sizing: border-box;
+  }
+
+  #brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #brand::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-color), transparent);
+  }
+
+  #wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #state {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    text-transform: lowercase;
+  }
+
+  #out {
+    white-space: pre-wrap;
+    font: 12px/1.6 Consolas, "Courier New", monospace;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    max-height: 300px;
+    overflow-y: auto;
+    color: var(--text-muted);
+    text-transform: none;
+  }
+
+  /* Custom Scrollbar for #out */
+  #out::-webkit-scrollbar {
+    width: 6px;
+  }
+  #out::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #out::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+  #out::-webkit-scrollbar-thumb:hover {
+    background: var(--text-dim);
+  }
+
+  .ok { color: var(--text-main); }
+  .bad { color: #f87171; text-decoration: underline; text-decoration-color: rgba(248, 113, 113, 0.4); }
+  .warn { color: #fbbf24; }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="brand">mansoor0x</div>
+  <div id="wrap">
+    <div id="state">loading lapse chain...</div>
+    <div id="out"></div>
+  </div>
+</div>
+<script type="module">import "./chain_lapse.js";</script>
+</body>
+</html>

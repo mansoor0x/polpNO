@@ -1,0 +1,28 @@
+CACHE MANIFEST
+# build mansoor0x-v1
+
+index.html
+lapse.html
+poops.html
+chain_lapse.js
+chain_poops.js
+core.js
+mem.js
+int64.js
+ps4_offsets.js
+rpc_worker.js
+payload.bin
+patches/900.bin
+patches/1100.bin
+patches/1150.bin
+patches/1200.bin
+patches/1250.bin
+patches/1300.bin
+
+NETWORK:
+*
+
+FALLBACK:
+index.html index.html
+lapse.html lapse.html
+poops.html poops.html
