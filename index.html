@@ -168,7 +168,7 @@
     detEl.innerHTML = "firmware <b>" + (key || "unknown") + "</b>"
         + " &middot; bug <b>" + (bug || "none") + "</b> &middot; " + why;
 
-    if (!bug) { setState("unsupported firmware", "bad"); return; }
+    if (!bug) { setState("", "bad"); return; }
 
     var target = (bug === "lapse" ? "lapse.html" : "poops.html")
         + location.search;
