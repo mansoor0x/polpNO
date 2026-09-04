@@ -12,7 +12,6 @@ int64.js
 ps4_offsets.js
 rpc_worker.js
 payload.bin
-patches/900.bin
 patches/1100.bin
 patches/1150.bin
 patches/1200.bin
